@@ -17,8 +17,9 @@ jobs:
         run : |
           npm install -g @angular/cli
           cd first-trouble
-          ng serve
+          ng build
+          cd dist
           
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.4.0
+        uses: actions/deploy-pages@v1
 
