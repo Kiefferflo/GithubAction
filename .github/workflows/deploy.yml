@@ -20,6 +20,7 @@ jobs:
       - name : Npm build
         run : npm build
       - name : Ng Build
+        run : |
           ng build
           cd dist
           
