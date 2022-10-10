@@ -13,10 +13,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - name : Build
+      - name : Npm install
         run : |
-          npm install -g @angular/cli
           cd first-trouble
+          npm i
+      - name : Npm build
+        run : npm build
+      - name : Ng Build
           ng build
           cd dist
           
