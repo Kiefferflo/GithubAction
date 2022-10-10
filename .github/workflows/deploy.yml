@@ -16,9 +16,7 @@ jobs:
       - name : Npm install
         run : npm i
       - name : Npm build
-        run : npm build
-      - name : Ng Build test
-        run : ng build
+        run : npm run build
           
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
