@@ -17,13 +17,13 @@ jobs:
         run : |
           cd first-trouble
           npm i
-      - name : Npm build
-        run : npm build
-      - name : Ng Build
-        run : |
-          ng build
-          cd dist
           
+      - name : Npm build
+        run : npm run build
+        
+      - name : cd Dist
+        run : cd dist
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
 
