@@ -12,6 +12,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      
+      - name : Build
+        run : |
+          npm install -g @angular/cli
+          cd first-trouble
+          ng serve
           
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.4.0
