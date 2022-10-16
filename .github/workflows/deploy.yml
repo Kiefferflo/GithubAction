@@ -3,6 +3,8 @@ name: Deployment
 on:
   push:
     branches: [ "master" ]
+    
+  workflow_dispatch:
       
 permissions:
   contents: read
@@ -22,6 +24,8 @@ jobs:
         run : npm i
       - name : Npm build
         run : npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
   deploy:
     environment:
       name: github-pages
@@ -31,4 +35,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-
