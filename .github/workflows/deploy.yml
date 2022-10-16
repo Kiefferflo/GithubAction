@@ -24,6 +24,11 @@ jobs:
         run : npm i
       - name : Npm build
         run : npm run build
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./dist/first-trouble
+          destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
   deploy:
